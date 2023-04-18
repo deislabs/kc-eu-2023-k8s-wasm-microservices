@@ -57,6 +57,8 @@ $ kubectl get pods --watch
 $ curl -v http://0.0.0.0:8081/hello-rust
 ```
 
+> To learn more about each of the `k8s` plugin step, see the [documentation on running Spin on Kubernetes](https://developer.fermyon.com/spin/kubernetes).
+
 ## Cleanup
 
 Bring down your `k3d` cluster:
