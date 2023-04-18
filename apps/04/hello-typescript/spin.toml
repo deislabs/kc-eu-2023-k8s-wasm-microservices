@@ -1,18 +1,17 @@
 spin_manifest_version = "1"
-name = "hello-rust"
+name = "hello-typescript"
 # This is an HTTP application.
 trigger = { type = "http", base = "/" }
 version = "0.1.0"
 
 [[component]]
-id = "hello-rust"
+id = "hello-typescript"
 # The Wasm module to execute for this component.
-source = "target/wasm32-wasi/release/hello_rust.wasm"
-# This component is not allowed to make any outbound HTTP requests.
-allowed_http_hosts = []
+source = "target/spin-http-js.wasm"
+exclude_files = ["**/node_modules"]
 [component.trigger]
 # This component will get invoked for all requests to `/...`.
 route = "/..."
 [component.build]
 # The command to execute when running `spin build`.
-command = "cargo build --target wasm32-wasi --release"
+command = "npm run build"
