@@ -1,0 +1,15 @@
+spin_manifest_version = "1"
+authors = ["Kate Goldenring <kate.goldenring@fermyon.com>"]
+description = ""
+name = "hello-rust"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "hello-rust"
+source = "target/wasm32-wasi/release/hello_rust.wasm"
+allowed_http_hosts = []
+[component.trigger]
+route = "/..."
+[component.build]
+command = "cargo build --target wasm32-wasi --release"

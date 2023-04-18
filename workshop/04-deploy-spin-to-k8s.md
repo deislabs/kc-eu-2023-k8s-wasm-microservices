@@ -46,13 +46,15 @@ $ spin plugin install -y -u https://raw.githubusercontent.com/chrismatteson/spin
 # Build your app locally
 $ spin build
 # Scaffold your Dockerfile, passing in the namespace of your registry
-$ spin k8s scaffold ghcr.io/kate-goldenring  && spin k8s build
+$ spin k8s scaffold ghcr.io/my-registry  && spin k8s build
 # Push the container to your container registry
-$ spin k8s push ghcr.io/kate-goldenring 
+$ spin k8s push ghcr.io/my-registry
 # After making sure it is a publicly accessible container or adding a regcred to your `deploy.yaml`
 $ spin k8s deploy
 # Watch the applications become ready
 $ kubectl get pods --watch
+# Query the application (modify the endpoint path to match your application name)
+$ curl -v http://0.0.0.0:8081/hello-rust
 ```
 
 ## Cleanup
