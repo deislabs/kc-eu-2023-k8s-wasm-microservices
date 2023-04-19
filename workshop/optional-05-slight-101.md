@@ -2,6 +2,20 @@
 
 [Slight](https://github.com/deislabs/spiderlightning) is an experimental runtime implementation for running WebAssembly modules with `wasi-cloud-core` capabilities.
 
+`wasi-cloud-core` is a wasm world that defines a core set of interfaces for distributed applications. It includes interfaces to interfact with key-value stores, blob storage, sql databases, message brokers and more. 
+
+You can read more about `wasi-cloud-core` [here](https://github.com/WebAssembly/WASI/issues/520)
+
+Here is a list of all wasi-cloud-core proposals
+- [wasi-keyvalue](https://github.com/WebAssembly/wasi-keyvalue)
+- [wasi-blob-store](https://github.com/WebAssembly/wasi-blob-store)
+- [wasi-distributed-lock-service](https://github.com/WebAssembly/wasi-distributed-lock-service)
+- [wasi-messaing](https://github.com/WebAssembly/wasi-messaging)
+- [wasi-http](https://github.com/WebAssembly/wasi-http)
+- [wasi-runtime-config](https://github.com/WebAssembly/wasi-runtime-config)
+- [wasi-distributed-lock-service](https://github.com/WebAssembly/wasi-distributed-lock-service)
+- [wasi-sql](https://github.com/WebAssembly/wasi-sql)
+
 ### Create your first slight application
 
 To get started, we will install slight on your local machine.
