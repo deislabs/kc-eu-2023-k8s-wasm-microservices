@@ -58,6 +58,6 @@ In this section you learned how to:
 - [x] Test the the spin application
 
 ### Navigation
-- Go back to [0. Setup](00-setup.md) if you still have questions on previous section
-- Otherwise, proceed to [2. Getting started with Spin](02-spin-getting-started.md)
+- Go back to [1. Getting started with Spin](01-spin-getting-started.md) if you still have questions on previous section
+- Otherwise, proceed to [3. Deploying Spin applications to Kubernetes](03-deploy-spin-to-k8s.md)
 - (_optionally_) If finished, let us know what you thought of the Spin and the workshop with this [short Typeform survey](https://fibsu0jcu2g.typeform.com/to/RK08OLSy#hubspot_utk=xxxxx&hubspot_page_name=xxxxx&hubspot_page_url=xxxxx).

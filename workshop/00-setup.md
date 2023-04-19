@@ -1,11 +1,5 @@
 # Setup
 
-First, clone the repository:
-
-```bash
-$ git clone https://github.com/deislabs/kc-eu-2023-k8s-wasm-microservices && cd kc-eu-2023-k8s-wasm-microservices
-```
-
 ### Configuring your local environment for Spin
 
 First, you have to configure [Spin](https://fermyon.com/spin) by following the [instructions for your operating system from the Spin documentation](https://developer.fermyon.com/spin/install).
