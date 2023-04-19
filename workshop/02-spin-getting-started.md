@@ -247,4 +247,4 @@ In this section you learned how to:
 - [x] Create a new Spin app using a template
 - [x] Build your Spin application with `spin build`
 - [x] Run your application locally with `spin up`
-- [x] Modify an HTTP trigger's rouute and entrypoint
+- [x] Modify an HTTP trigger's route and entrypoint
