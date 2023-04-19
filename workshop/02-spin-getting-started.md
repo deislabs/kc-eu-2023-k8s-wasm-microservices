@@ -248,3 +248,8 @@ In this section you learned how to:
 - [x] Build your Spin application with `spin build`
 - [x] Run your application locally with `spin up`
 - [x] Modify an HTTP trigger's route and entrypoint
+
+### Navigation
+- Go back to [1. Run your first wasm app on k3d](01-run-your-first-wasm-on-k3d.md) if you still have questions on previous section
+- Otherwise, proceed to [3. Deploying Spin applications to Kubernetes](03-deploy-spin-to-k8s.md)
+- (_optionally_) If finished, let us know what you thought of the Spin and the workshop with this [short Typeform survey](https://fibsu0jcu2g.typeform.com/to/RK08OLSy#hubspot_utk=xxxxx&hubspot_page_name=xxxxx&hubspot_page_url=xxxxx).

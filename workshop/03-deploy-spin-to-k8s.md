@@ -57,7 +57,7 @@ $ kubectl get pods --watch
 $ curl -v http://0.0.0.0:8081/hello-rust
 ```
 
-> To learn more about each of the `k8s` plugin step, see the [documentation on running Spin on Kubernetes](https://developer.fermyon.com/spin/kubernetes).
+> To learn more about each of the `k8s` plugin steps, see the [documentation on running Spin on Kubernetes](https://developer.fermyon.com/spin/kubernetes).
 
 ## Cleanup
 
@@ -73,3 +73,7 @@ In this section you learned how to:
 
 - [x] Use the containerd Wasm shim to package a Spin app within a Docker container
 - [x] Deploy a containerized Spin app to a Kubernetes cluster 
+
+### Navigation
+- Go back to [2. Getting started with Spin](02-spin-getting-started.md) if you still have questions on previous section
+- (_optionally_) If finished, let us know what you thought of the Spin and the workshop with this [short Typeform survey](https://fibsu0jcu2g.typeform.com/to/RK08OLSy#hubspot_utk=xxxxx&hubspot_page_name=xxxxx&hubspot_page_url=xxxxx).
