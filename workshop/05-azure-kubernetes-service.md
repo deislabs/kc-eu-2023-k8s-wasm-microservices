@@ -57,7 +57,7 @@ Now let's deploy a slight Wasm microservice into our AKS cluster.
 
 ```shell
 # apply a service and a deployment containing a published slight application
-kubectl apply -f ../aks-workload/spin.yaml
+kubectl apply -f ../apps/05/spin.yaml
 ```
 
 Now, let's see our pods running and curl our running service.
