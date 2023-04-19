@@ -40,6 +40,8 @@ The plugin requires that all modules are available locally and that files are wi
 
 Install the plugin, scaffold the Dockerfile, build the container, and push it to your container registry. The following example uses the [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry).
 
+> Note: if creating a Rust app, before deploying the app to Kubernetes, modify the `spin.toml` file to remove the following as the shim does not yet support `spin watch`: `watch = ["src/**/*.rs", "Cargo.toml"]`
+
 ```bash
 # Install the plugin
 $ spin plugin install -y -u https://raw.githubusercontent.com/chrismatteson/spin-plugin-k8s/main/k8s.json
