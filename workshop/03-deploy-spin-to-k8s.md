@@ -47,14 +47,14 @@ $ spin plugin install -y -u https://raw.githubusercontent.com/chrismatteson/spin
 $ spin build
 # Scaffold your Dockerfile, passing in the namespace of your registry
 $ spin k8s scaffold ghcr.io/my-registry  && spin k8s build
-# Push the container to your container registry
-$ spin k8s push ghcr.io/my-registry
+# Import your image into the k3d cluster
+$ k3d image import -c wasm-cluster  ghcr.io/my-registry/hello-typescript:0.1.0
 # After making sure it is a publicly accessible container or adding a regcred to your `deploy.yaml`
 $ spin k8s deploy
 # Watch the applications become ready
 $ kubectl get pods --watch
 # Query the application (modify the endpoint path to match your application name)
-$ curl -v http://0.0.0.0:8081/hello-rust
+$ curl -v http://0.0.0.0:8081/hello-typescript
 ```
 
 > To learn more about each of the `k8s` plugin steps, see the [documentation on running Spin on Kubernetes](https://developer.fermyon.com/spin/kubernetes).
