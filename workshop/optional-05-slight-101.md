@@ -2,7 +2,7 @@
 
 [Slight](https://github.com/deislabs/spiderlightning) is an experimental runtime implementation for running WebAssembly modules with `wasi-cloud-core` capabilities.
 
-### Run your first slight application
+### Create your first slight application
 
 To get started, we will install slight on your local machine.
 ```
@@ -22,12 +22,23 @@ Next, create a new rust project with slight:
 slight new -n spidey@v0.4.1 rust && cd spidey
 ```
 
+This will create a new rust project with slight. You can find the source code for the project in the `src` directory.
+
+### Install Rust
+
+If you don't have Rust installed, you can install it by running the following command:
+
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
 Next, you will need to add `wasm32-wasi` target to your rust toolchain. You can do this by running the following command:
 
 ```
 rustup target add wasm32-wasi
 ```
 
+### Build and Run
 Then you can build the project by running the following command:
 
 ```
