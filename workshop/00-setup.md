@@ -67,4 +67,4 @@ In this section you learned how to:
 
 ### Navigation
 
-- Proceed to [01 - TODO](TODO)
+- Proceed to [1. Run your first wasm app on k3d](01-run-your-first-wasm-on-k3d.md) if you still have questions on previous section
