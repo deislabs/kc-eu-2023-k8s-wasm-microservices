@@ -27,7 +27,7 @@ az aks get-credentials -g aks-wasm -n my-wasm-cluster
 
 The subsequent commands assume a default virtual machine SKU which may or may not be available for your subscription. If you encounter an error with the default VM SKU, please add `-s some_specific_sku` flag to the end of the `az aks` commands. The error message returned will list the available SKUs for your subscription.
 
-## Deploying a Slight Workload to AKS
+## Deploying a Spin Workload to AKS
 Before we deploy our workflow, let's ensure that the runtime class we need are applied to the cluster.
 
 ```shell
@@ -37,27 +37,27 @@ wasmtime-slight-v1   slight    20h
 wasmtime-spin-v1     spin      20h
 ```
 
-The subsequent command shows us we have 2 runtime classes installed, slight and spin runtimes. Let's explore the `wasmtime-slight-v1` runtime class.
+The subsequent command shows us we have 2 runtime classes installed, slight and spin runtimes. Let's explore the `wasmtime-spin-v1` runtime class.
 
 ```shell
-kubectl get runtimeclasses wasmtime-slight-v1 -o yaml
+kubectl get runtimeclasses wasmtime-spin-v1 -o yaml
 apiVersion: node.k8s.io/v1
-handler: slight
+handler: spin
 kind: RuntimeClass
 metadata:
-  name: wasmtime-slight-v1
+  name: wasmtime-spin-v1
 scheduling:
   nodeSelector:
-    kubernetes.azure.com/wasmtime-slight-v1: "true"
+    kubernetes.azure.com/wasmtime-spin-v1: "true"
 ```
 
-In the subsequent command, you can see the `wasmtime-slight-v1` runtime class maps to the `slight` containerd handler, which is registered on nodes in the cluster.
+In the subsequent command, you can see the `wasmtime-spin-v1` runtime class maps to the `spin` containerd handler, which is registered on nodes in the cluster.
 
 Now let's deploy a slight Wasm microservice into our AKS cluster.
 
 ```shell
 # apply a service and a deployment containing a published slight application
-kubectl apply -f ../aks-workload/slight.yaml
+kubectl apply -f ../aks-workload/spin.yaml
 ```
 
 Now, let's see our pods running and curl our running service.
@@ -65,28 +65,27 @@ Now, let's see our pods running and curl our running service.
 ```shell
 kubectl get pods -o wide
 NAME                                                   READY   STATUS        RESTARTS   AGE    IP            NODE                               NOMINATED NODE   READINESS GATES
-wasm-slight-84cc9d586-nmg5h                            1/1     Running       0          45m    10.244.5.60   aks-wasipool-27743152-vmss000001   <none>           <none>
+wasm-spin-84cc9d586-nmg5h                            1/1     Running       0          45m    10.244.5.60   aks-wasipool-27743152-vmss000001   <none>           <none>
 
 kubectl get service
 NAME          TYPE           CLUSTER-IP    EXTERNAL-IP      PORT(S)        AGE
 kubernetes    ClusterIP      10.0.0.1      <none>           443/TCP        22h
-wasm-slight   LoadBalancer   10.0.67.191   20.165.136.242   80:31240/TCP   68m
+wasm-spin   LoadBalancer   10.0.67.191   20.165.136.242   80:31240/TCP   68m
 ```
 
 After running the subsequent commands, you will see similar, but slightly different output. Copy the `EXTERNAL-IP` of your service and curl the following URI substituting your external IP address.
 
 The following is an example using a cluster I built earlier.
 ```shell
-$ curl http://20.165.136.242/hello
-hello world!
+curl http://20.165.136.242/hello
+Hello world from Spin!
 ```
 
 We can see we get a response from our Wasm pod, now let's take a look at the pod logs.
 
 ```shell
-kubectl logs wasm-slight-84cc9d586-nmg5h
-Server is running on port 3000
-I just got a request uri: /hello method: GET
+kubectl logs wasm-spin-5499569dfd-d24tv
+Hello, world! You should see me in pod logs
 ```
 
 Congrats!! You have a running Wasm microservice in AKS.
