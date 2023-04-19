@@ -183,7 +183,8 @@ command = "npm run build"
 First install the dependencies for the template with `npm install`. You are now ready to build your application using `spin build`, which will invoke each component's `[component.build.command]` from `spin.toml`:
 
 ```bash
-spin build
+$ npm install
+$ spin build
 Executing the build command for component hello-typescript: npm run build
 ...
 Spin compatible module built successfully
