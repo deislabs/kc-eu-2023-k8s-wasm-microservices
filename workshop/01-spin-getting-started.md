@@ -250,6 +250,6 @@ In this section you learned how to:
 - [x] Modify an HTTP trigger's route and entrypoint
 
 ### Navigation
-- Go back to [1. Run your first wasm app on k3d](01-run-your-first-wasm-on-k3d.md) if you still have questions on previous section
-- Otherwise, proceed to [3. Deploying Spin applications to Kubernetes](03-deploy-spin-to-k8s.md)
+- Go back to [0. Setup](00-setup.md) if you still have questions on previous section
+- Otherwise, proceed to [2. Run your first wasm app on k3d](02-run-your-first-wasm-on-k3d.md) if you still have questions on previous section.
 - (_optionally_) If finished, let us know what you thought of the Spin and the workshop with this [short Typeform survey](https://fibsu0jcu2g.typeform.com/to/RK08OLSy#hubspot_utk=xxxxx&hubspot_page_name=xxxxx&hubspot_page_url=xxxxx).
