@@ -2,7 +2,11 @@
 
 ## What is runwasi?
 
-[Runwasi](https://github.com/containerd/runwasi) is governed by the CNCF Containerd project. It operates as a containerd shim and allows you to run WASI applications on Kubernetes. It is a great way to get started with WASI and WebAssembly on Kubernetes.
+Kubernets uses [containerd](https://containerd.io/) as its container runtime. Containerd pulls OCI images from registries and delegates the task of execution of containers to lower level runtime known as a shim.
+
+[runwasi](https://github.com/containerd/runwasi) operates as a containerd shim and allows you to run WebAssembly System Interface (WASI) applications on Kubernetes. It is governed by the CNCF Containerd project, and is a great way to get started with WASI and WebAssembly on Kubernetes.
+
+In this workshop, we will use [k3d](https://k3d.io/) to create a local Kubernetes cluster with the spin shim installed and configured. The spin shim uses runwasi as a library to facility the execution of spin applications on Kubernetes.
 
 ## Pre-requisites
 
