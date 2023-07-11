@@ -5,4 +5,4 @@
 - [2. Run your first wasm app on k3d](./workshop/02-run-your-first-wasm-on-k3d.md)
 - [3. Deploy your Spin application to Kubernetes](./workshop/03-deploy-spin-to-k8s.md)
 - [4. Building more complex Spin applications](./workshop/04-magic-8-ball.md)
-- [5. Deploying to Azure Kubernetes Service](./workshop/05-azure-kubernetes-service.md)
+- [5. Deploying with kwasm-operator](./workshop/05-kwasm.md)
