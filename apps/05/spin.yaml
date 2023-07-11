@@ -12,7 +12,7 @@ spec:
       labels:
         app: wasm-spin
     spec:
-      runtimeClassName: wasmtime-spin-v1
+      runtimeClassName: wasmtime-spin
       containers:
         - name: hello-spin
           image: ghcr.io/deislabs/containerd-wasm-shims/examples/spin-rust-hello:v0.5.1
