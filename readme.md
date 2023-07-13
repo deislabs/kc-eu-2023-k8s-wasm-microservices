@@ -1,5 +1,11 @@
 # WebAssembly and Kubernetes
 
+## Dependencies
+
+- TinyGo
+
+## Index
+
 - [0. Setup](./workshop/00-setup.md)
 - [1. Spin 101](./workshop/01-spin-getting-started.md)
 - [2. Run your first wasm app on k3d](./workshop/02-run-your-first-wasm-on-k3d.md)

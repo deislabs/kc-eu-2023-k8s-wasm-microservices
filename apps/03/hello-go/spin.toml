@@ -1,0 +1,16 @@
+spin_manifest_version = "1"
+authors = ["Danielle Lancashire <dani@builds.terrible.systems>"]
+description = ""
+name = "hello-go"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "hello-go"
+source = "main.wasm"
+allowed_http_hosts = []
+[component.trigger]
+route = "/..."
+[component.build]
+command = "tinygo build -target=wasi -gc=leaking -no-debug -o main.wasm main.go"
+watch = ["**/*.go", "go.mod"]

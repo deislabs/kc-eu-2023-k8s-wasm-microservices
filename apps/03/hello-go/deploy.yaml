@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-go
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello-go
+  template:
+    metadata:
+      labels:
+        app: hello-go
+    spec:
+      runtimeClassName: wasmtime-spin
+      containers:
+        - name: hello-go
+          image: ghcr.io/endocrimes/hello-go-wasi:0.1.0
+          command: ["/"]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-go
+spec:
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  selector:
+    app: hello-go
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hello-go
+  annotations:
+    ingress.kubernetes.io/ssl-redirect: "false"
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /hello-go
+            pathType: Prefix
+            backend:
+              service:
+                name: hello-go
+                port:
+                  number: 80
